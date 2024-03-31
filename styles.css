@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --Desaturated-Red: #ce9797;
+  --Soft-Red: #f96262;
+  --Dark-Grayish-Red: #413a3a;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh; 
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  display:               grid;
+  grid-template-columns: .55fr .45fr;
+  grid-template-rows:   .2fr .5fr .3fr;
+  grid-template-areas: 
+  "logo_box  image_box"
+  "info      image_box"
+  "input_box image_box"
+  ;
+}
+
+img, ion-icon {display: block;}
+
+.logo_box, .info, .input_box {
+  padding-inline: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.logo_box {
+  grid-area: logo_box;
+}
+
+.info {
+  grid-area: info;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.info h1 {
+  text-transform: uppercase;
+  font-size: 3.8rem;
+  line-height: 4.3rem;
+}
+
+.slim {
+  letter-spacing: 1rem;
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+.fat {
+  letter-spacing: .9rem;
+  font-weight: 500;
+  color: var(--Dark-Grayish-Red);
+}
+
+.info p {
+  line-height: 1.7rem;
+  color: var(--Desaturated-Red);
+}
+
+.input_box {
+  grid-area: input_box;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 15px;
+  position: relative;
+}
+
+.entrada {
+  height: 50px;
+  width: 100%;
+  border-radius: 30px;
+  border: solid 1px rgba(0, 0, 0, 0.11);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+
+.entrada::placeholder {
+  color: #ce97977c;
+}
+
+.entrada:invalid {
+  border: 2px solid var(--Soft-Red);
+  outline: 0;
+}
+
+.warning {
+  color: var(--Soft-Red);
+  position: absolute;
+  top: 22px;
+  transform: translateY(12%);
+  left: 59%;
+  font-size: 28px;
+  visibility: hidden;
+}
+
+button {
+  height: 50px;
+  width: 15%;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 65%;
+  background: rgb(247,190,190);
+  background: linear-gradient(135deg, rgba(247,190,190,1) 0%, rgba(237,139,139,1) 100%);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--Desaturated-Red);
+}
+
+.message_error {
+  padding: 10px 20px;
+  font-size: .9rem;
+  color: var(--Soft-Red);
+  visibility: hidden;
+}
+
+ion-icon {
+  font-size: 25px;
+  color: white;
+}
+
+.image_box {
+  grid-area: image_box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image_box picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all .25s ease;
+}
+
+.image_box picture img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    justify-content: center;
+    height: 800px;
+    font-size: 15px;
+    display:               grid;
+    grid-template-columns: minmax(360px, 460px);
+    grid-template-rows:   .1fr .3fr .4fr .2fr;
+    grid-template-areas: 
+    "logo_box"
+    "image_box"
+    "info"
+    "input_box"
+    ;
+  }
+
+  .logo_box, .info, .input_box {
+    padding-inline: 5%;
+  }
+  
+  .logo_box {
+    grid-area: logo_box;
+    scale: .8;
+  }
+
+  .info p {
+    padding-top: 15px;
+  }
+
+  .image_box {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .image_box picture img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .info {
+    scale: .8;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info h1 {
+    line-height: 4rem;
+  }
+
+  .input_box {
+    padding-top: 0;
+  }
+  
+  .entrada {
+    width: 90%;
+  }
+
+  button {
+    width: 20%;
+    left: 70%;
+  }
+
+  .warning {
+    top: 5%;
+    left: 59%;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+
+    <div class="logo_box">
+      <img src="images/logo.svg" alt="base">
+    </div>
+
+    <div class="info">
+      <h1 class="slim">We're</h1>
+      <h1 class="fat">coming <br>soon</h1>
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      
+    </div>
+
+    <form class="input_box">
+      <input type="email" placeholder="Email Address" class="entrada">
+      <ion-icon name="alert-circle" class="warning"></ion-icon>
+      <button class="submit">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+      <p class="message_error">Please provide a valid email</p>
+    </form>
+
+    <div class="image_box">
+      <picture>
+        <source 
+        media="(min-width:768px)"
+        srcset="images/hero-desktop.jpg"
+        />
+        <img src="images/hero-mobile.jpg" alt="hero">
+      </picture>
+      
+    </div>
+
+    <!-- <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Carlos Maracara</a>.
+      </p>
+    </footer> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
